@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+}
+
+.clock {
+    font-size: 2em;
+    color: white; /* Change the color to red */
+}

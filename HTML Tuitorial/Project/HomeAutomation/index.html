@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ELECTRIC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #16a085;
+            font-size: 2.5em;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+
+        button {
+            font-size: 1.5em;
+            width: 150px;
+            height: 150px; /* Keep square shape */
+            margin: 10px;
+            border: none;
+            border-radius: 15px; /* Add rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* ON buttons style */
+        .btn-on {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+
+        /* OFF buttons style */
+        .btn-off {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI ELECTRIC</h1>
+    <h3>Home Automation</h3>
+
+    <a href="/led1on"><button class="btn-on">LIGHT 1 : ON</button></a>
+    <a href="/led1off"><button class="btn-off">LIGHT 1 : OFF</button></a>
+    <a href="/led2on"><button class="btn-on">LIGHT 2 : ON</button></a>
+    <a href="/led2off"><button class="btn-off">LIGHT 2 : OFF</button></a>
+
+</body>
+</html>

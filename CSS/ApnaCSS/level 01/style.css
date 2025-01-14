@@ -1,0 +1,20 @@
+h1 {
+    color: #00ff00;
+    background-color: #ffffff;
+}
+
+button{
+    color: blue;
+    border: black;
+}
+body{
+    background-color:rgb(50, 50, 50);
+}
+button{background-color: yellow;}
+.myClass{color: blueviolet;}
+.yourClass{color: pink;}
+#a{color: brown;}
+.a02{color: #ffffff;}
+p1,p2{color: aqua;}
+
+p{color: aliceblue;}

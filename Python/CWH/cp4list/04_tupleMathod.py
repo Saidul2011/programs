@@ -1,0 +1,5 @@
+a=(3,55,33,44,33,4,4,3,33,9)
+new=a.count(33)
+print(new)
+nw=a.index(55)
+print(nw)

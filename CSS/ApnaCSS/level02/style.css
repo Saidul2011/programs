@@ -1,0 +1,19 @@
+p{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    text-decoration:blue double underline;
+}
+a{
+    text-decoration: none;
+}
+#b{
+    font-weight: normal;
+}
+#c{
+    font-weight: bolder;
+}
+#d{
+    font-weight: 900;
+}

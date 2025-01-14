@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinations of 4 Characters</title>
+</head>
+<body>
+
+<h2>Combinations of 4 Characters from the English Alphabet</h2>
+
+<pre id="combinations"></pre>
+
+<script>
+    function generateCombinations(characters, r, count) {
+        var combinations = [];
+        for (var i = 0; i < characters.length; i++) {
+            for (var j = i; j < characters.length; j++) {
+                for (var x = j; x < characters.length; x++) {
+                    for (var y = x; y < characters.length; y++) {
+                        combinations.push([characters[i], characters[j], characters[x], characters[y]].join(''));
+                    }
+                }
+            }
+        }
+        return combinations.slice(0, count);
+    }
+
+    // Define the set of characters (English alphabet)
+    var characters = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+
+    // Generate combinations and display on the web page
+    var combinations = generateCombinations(characters, 4, 10);
+    document.getElementById('combinations').textContent = combinations.join('\n');
+</script>
+
+</body>
+</html>
