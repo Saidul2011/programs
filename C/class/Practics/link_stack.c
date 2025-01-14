@@ -77,7 +77,7 @@ int main(){
         case 5:
             exit(1);
         default:
-            printf("In@valid chooice!\n");
+            printf("Invalid chooice!\n");
         }
         printf("\n");
     }
