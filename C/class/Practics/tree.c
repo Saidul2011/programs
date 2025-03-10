@@ -97,90 +97,37 @@ void search(node *root, int data){
 //     }
 //     printf("%d Not found!\n");
 // }
+node *min_key(node *r){
+    while(r->left !=NULL){
+        r = r->left;
+    }
+    return r;
+}
+node *delete(node *root, int key){
+    if(root == NULL) return root;
 
-node *delete(node *temp,int data){
-    if(root->data == data){
-        node *hold=root;
-        temp=temp->right;
-        while(temp->left != NULL){
-            temp=temp->left;
-        }
-        temp->left=root->left;
-        root=temp;
-        free(hold);
-        hold=NULL;
-        return root;
-    }
+    if(key < root->data) root->left=delete(root->left,key);
+    else if(key > root->data) root->right=delete(root->right, key);
     else{
-        node *prev=temp;
-        while(temp != NULL){
-            prev=temp;
-            if(temp->data == data){
-                    node *hold=temp;
-                    if(temp->left==NULL && temp->right==NULL){
-                        free(temp);
-                        temp=NULL;
-                    }
-                    else if(temp->right!=NULL && temp->left!=NULL){
-                        temp=temp->right;
-                        while(temp->left != NULL){
-                                temp=temp->left;
-                            }
-                        temp->left=hold->left;
-                        prev->left=temp;
-                        free(hold);
-                        hold=NULL;
-                    }
-                    else if(temp->right!=NULL){
-                            temp=temp->right;
-                            prev->left=temp;
-                            free(hold);
-                            hold=NULL;
-                    }
-                    else{
-                        temp=temp->left;
-                        prev->left=temp;
-                        free(hold);
-                        hold=NULL;
-                    }
-                }
-            else{
-                temp=temp->right;
-                if(temp->data == data){
-                    node *hold=temp;
-                    if(temp->left==NULL && temp->right==NULL){
-                        free(temp);
-                        temp=NULL;
-                    }
-                    else if(temp->right!=NULL && temp->left!=NULL){
-                        temp=temp->right;
-                        while(temp->left != NULL){
-                                temp=temp->left;
-                            }
-                        temp->left=hold->left;
-                        prev->right=temp;
-                        free(hold);
-                        hold=NULL;
-                    }
-                    else if(temp->right!=NULL){
-                            temp=temp->right;
-                            prev->right=temp;
-                            free(hold);
-                            hold=NULL;
-                    }
-                    else{
-                        temp=temp->left;
-                        prev->right=temp;
-                        free(hold);
-                        hold=NULL;
-                    }
-                }
-            }
-            
+        if(root->left == NULL && root->right == NULL){
+            free(root);
+            return NULL;
         }
-        return root;
+        else if(root->left == NULL){
+            node *temp= root->right;
+            free(root);
+            return temp;
+        }
+        else if(root->right == NULL){
+            node *temp= root->left;
+            free(root);
+            return temp;
+        }
+        node *temp=min_key(root->right);
+        root->data=temp->data;
+        root->right=delete(root->right,temp->data);
     }
-    
+    return root;
 }
 int main(){
     int ch;
